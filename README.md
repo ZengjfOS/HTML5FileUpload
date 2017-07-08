@@ -6,7 +6,10 @@
 * [index.php](index.php)
 * [upload.php](upload.php)
 
-## 参考文档：
+## 参考文档
 
 [Html5 File Upload with Progress](http://www.matlus.com/html5-file-upload-with-progress/#codeListing3)
 
+## 输出
+
+![HTML5FileUpload.png](image/HTML5FileUpload.png)
