@@ -15,7 +15,7 @@
             echo "Size: " . ($_FILES["fileToUpload"]["size"] / 1024) . " Kb<br />";
             echo "Temp file: " . $_FILES["fileToUpload"]["tmp_name"] . "<br />";
     
-            if (file_exists("upload/" . $_FILES["fileToUpload"]["name"]))
+            if (file_exists("uploads/" . $_FILES["fileToUpload"]["name"]))
             {
                 echo $_FILES["fileToUpload"]["name"] . " already exists. ";
             }
