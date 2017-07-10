@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Upload Files using XMLHttpRequest - Minimal</title>
-  
     <script type="text/javascript">
+
         function fileSelected() {
             var file = document.getElementById('fileToUpload').files[0];
   
@@ -41,17 +41,17 @@
         function uploadProgress(evt) {
             if (evt.lengthComputable) {
                 var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-                document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+                document.getElementById('progressBar').value = percentComplete;
+                document.getElementById("progressBarPercent").innerHTML = percentComplete.toString() + "%";
             } else {
-                document.getElementById('progressNumber').innerHTML = 'unable to compute';
+                document.getElementById('progressBar').value = 0;
+                document.getElementById("progressBarPercent").innerHTML = "Unable to upload.";
             }
         }
   
         function uploadComplete(evt) {
             /* This event is raised when the server send back a response */
-            alert(evt.target.responseText);
-            var element=document.getElementById("showBack");
-            element.innerHTML = evt.target.responseText;
+            document.getElementById("showBack").innerHTML = evt.target.responseText;
         }
   
         function uploadFailed(evt) {
@@ -61,6 +61,7 @@
         function uploadCanceled(evt) {
             alert("The upload has been canceled by the user or the browser dropped the connection.");
         }
+
     </script>
   </head>
   <body>
@@ -75,12 +76,11 @@
       <div class="row">
         <input type="button" onclick="uploadFile()" value="Upload" />
       </div>
-      <div id="progressNumber"></div>
+      <progress id="progressBar" max="100" value="0"></progress><label id="progressBarPercent">0%</label>
     </form>
-  
     <br> <br> <br>
     <hr>
     <div id="showBack">
-    <div>
+    </div>
   </body>
 </html>
